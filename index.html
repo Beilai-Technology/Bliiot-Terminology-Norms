@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>术语库 | Beilai</title>
+    <meta
+      name="description"
+      content="Beilai 术语库单页站点，打开网页即可查看全部标准术语。"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <main class="site-shell">
+      <section class="hero">
+        <div class="hero-top">
+          <div class="brand-mark">
+            <img src="assets/logo.png" alt="Beilai logo" />
+          </div>
+          <div>
+            <p class="eyebrow">Beilai Documentation</p>
+            <h1>术语库</h1>
+          </div>
+        </div>
+        <p>
+          这是一个为 Beilai 定制的单页术语库。无需中英文切换，打开网页即可直接查看、检索和统一术语写法，适合文档编写、翻译校对和产品资料整理时快速查阅。
+        </p>
+        <div class="stats">
+          <article class="stat-card">
+            <span class="stat-label">展示方式</span>
+            <span class="stat-value">单页直读</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">术语数量</span>
+            <span class="stat-value" id="totalTerms">--</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">检索方式</span>
+            <span class="stat-value">本地实时搜索</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <aside class="panel">
+          <h2>使用说明</h2>
+          <ul>
+            <li>搜索框支持中文、英文和缩写混合检索。</li>
+            <li>页面默认展示全部术语，不需要切页或跳转。</li>
+            <li>`Wi-Fi`、`PCIe`、`Port No.` 等统一写法已单独列出。</li>
+            <li>品牌名除网址场景外统一翻译为 `Beilai`。</li>
+          </ul>
+
+          <div class="search-box" aria-label="搜索术语">
+            <span>搜索</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="输入中文、英文或备注，例如 Wi-Fi / 蜂鸣器 / Beilai"
+            />
+          </div>
+        </aside>
+
+        <section class="table-wrap">
+          <div class="table-head">
+            <h2>标准术语表</h2>
+            <div class="table-meta" id="resultCount">共 -- 条术语</div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">中文术语</th>
+                <th scope="col">标准英文</th>
+                <th scope="col">备注</th>
+              </tr>
+            </thead>
+            <tbody id="termTable">
+              <tr>
+                <td class="term-cn">硬件独立性</td>
+                <td class="term-en">Hardware independence</td>
+                <td class="note">用于描述平台或系统对硬件的解耦能力。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">多语言支持</td>
+                <td class="term-en">Multi-language support</td>
+                <td class="note">适用于软件、界面或文档能力说明。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">强大的库管理</td>
+                <td class="term-en">Powerful library management</td>
+                <td class="note">面向平台能力描述。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">通用自动化控制</td>
+                <td class="term-en">General automation control</td>
+                <td class="note">用于工业控制能力表述。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">高级运动控制</td>
+                <td class="term-en">Advanced motion control</td>
+                <td class="note">常见于控制器和系统功能介绍。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">数控与机器人控制</td>
+                <td class="term-en">CNC and robot control</td>
+                <td class="note">原稿尾部分号已去除，统一为标准术语。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">深度定制版本</td>
+                <td class="term-en">A deeply customized version</td>
+                <td class="note">句首统一首字母大写。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">浪涌</td>
+                <td class="term-en">Surge</td>
+                <td class="note">常用于浪涌保护、电源和接口说明。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">校验位</td>
+                <td class="term-en">Parity Bit</td>
+                <td class="note">串口或通信配置语境常用。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">主频（表格）</td>
+                <td class="term-en">Fre.</td>
+                <td class="note">仅用于表格字段缩写。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">主频（正文）</td>
+                <td class="term-en">Clock speed</td>
+                <td class="note">用于正文叙述，不使用缩写。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">TPC（边缘可视化平板电脑）</td>
+                <td class="term-en">Industrial Touch Panel PC</td>
+                <td class="note">保留产品类别完整表达。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">WIFI 统一</td>
+                <td class="term-en">Wi-Fi</td>
+                <td class="note">统一使用带连字符和大小写的标准写法。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">PCIE 统一</td>
+                <td class="term-en">PCIe</td>
+                <td class="note">统一使用标准大小写写法。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">实时控制</td>
+                <td class="term-en">Real-time Control</td>
+                <td class="note">适用于控制器性能和系统特性说明。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">硬件看门狗</td>
+                <td class="term-en">Hardware watchdog</td>
+                <td class="note">常见于可靠性描述。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">系统烧录</td>
+                <td class="term-en">System Flashing</td>
+                <td class="note">用于系统镜像写入场景。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">启动卡</td>
+                <td class="term-en">Boot Card</td>
+                <td class="note">与启动介质相关。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">烧录卡</td>
+                <td class="term-en">Flashing Card</td>
+                <td class="note">与系统烧录介质相关。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">N 板数字</td>
+                <td class="term-en">N-Board Digital</td>
+                <td class="note">原稿中的连接形式统一为连字符。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">干接点</td>
+                <td class="term-en">Dry Contact</td>
+                <td class="note">电气接口术语。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">湿接点</td>
+                <td class="term-en">Wet Contact</td>
+                <td class="note">电气接口术语。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">隔离保护</td>
+                <td class="term-en">Isolation Protection</td>
+                <td class="note">用于硬件防护和接口说明。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">模块端口</td>
+                <td class="term-en">Module Port</td>
+                <td class="note">用于模块化设备或扩展模块接口说明。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">外部 RTC</td>
+                <td class="term-en">External RTC</td>
+                <td class="note">保留 RTC 缩写。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">加密芯片</td>
+                <td class="term-en">Encryption Chip</td>
+                <td class="note">安全相关硬件术语。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">蜂鸣器</td>
+                <td class="term-en">Buzzer</td>
+                <td class="note">通用硬件术语。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">使能蜂鸣器</td>
+                <td class="term-en">Enable buzzer</td>
+                <td class="note">用于控制命令或配置说明。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">失能蜂鸣器</td>
+                <td class="term-en">Disable buzzer</td>
+                <td class="note">与使能蜂鸣器成对使用。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">工业 AI 边缘控制器</td>
+                <td class="term-en">Industrial AI Edge Controller</td>
+                <td class="note">原稿英文缺少尾字母，已按完整表达修正。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">音频接口使用</td>
+                <td class="term-en">Audio Interface Usage</td>
+                <td class="note">原稿前导空格已清理。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">钡铼除了网址都翻译成</td>
+                <td class="term-en">Beilai</td>
+                <td class="note">品牌名统一规则，网址场景除外。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">端口号</td>
+                <td class="term-en">Port No.</td>
+                <td class="note">适合表头、参数表和接口说明。</td>
+              </tr>
+              <tr>
+                <td class="term-cn">蜂窝配置</td>
+                <td class="term-en">Cellular Configuration</td>
+                <td class="note">用于 4G/5G 或蜂窝网络参数设置。</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="empty-state" id="emptyState">没有匹配的术语，请换个关键词试试。</div>
+        </section>
+      </section>
+
+      <p class="footer">本页为静态单页站点，双击打开即可使用。</p>
+    </main>
+
+    <script>
+      const input = document.getElementById("searchInput");
+      const rows = Array.from(document.querySelectorAll("#termTable tr"));
+      const totalTerms = document.getElementById("totalTerms");
+      const resultCount = document.getElementById("resultCount");
+      const emptyState = document.getElementById("emptyState");
+      const total = rows.length;
+
+      totalTerms.textContent = `${total} 条`;
+
+      function updateFilter() {
+        const keyword = input.value.trim().toLowerCase();
+        let visible = 0;
+
+        rows.forEach((row) => {
+          const text = row.innerText.toLowerCase();
+          const matched = !keyword || text.includes(keyword);
+          row.hidden = !matched;
+          if (matched) {
+            visible += 1;
+          }
+        });
+
+        resultCount.textContent = `共 ${visible} 条术语`;
+        emptyState.style.display = visible === 0 ? "block" : "none";
+      }
+
+      input.addEventListener("input", updateFilter);
+      updateFilter();
+    </script>
+  </body>
+</html>
